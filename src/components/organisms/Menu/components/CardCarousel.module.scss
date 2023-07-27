@@ -1,0 +1,9 @@
+.isActive {
+  filter: invert(100%);
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.notActive {
+  opacity: 0.6;
+}
