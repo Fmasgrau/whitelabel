@@ -1,4 +1,4 @@
-import Image from 'next/image';
+'use client';
 import React from 'react';
 import {
   searchIcon,
@@ -8,8 +8,21 @@ import {
 } from '../../../../assets';
 
 import FooterButtonComponent from './components/FooterButtonComponent';
+import { useRouter } from 'next/navigation';
 
-export default function Footer() {
+export enum FooterTabs {
+  PRODUCTS = 'products',
+  CART = 'cart',
+  ORDER = 'order',
+  LOGIN = 'login',
+}
+
+export default function Footer({ activeTab }: { activeTab: FooterTabs }) {
+  const [active, setActive] = React.useState<FooterTabs>(activeTab);
+  const router = useRouter();
+  const handleChangeTab = (footerTab: FooterTabs) => {
+    router.push(`/${footerTab}`);
+  };
 
   return (
     <div className='flex'>
@@ -17,25 +30,29 @@ export default function Footer() {
         icon={searchIcon}
         alt='Explorar'
         text='Explorar'
-        isActive={true}
+        isActive={active === FooterTabs.PRODUCTS}
+        onClick={() => handleChangeTab(FooterTabs.PRODUCTS)}
       />
       <FooterButtonComponent
         icon={shoppingCartIcon}
         alt='Carrito'
         text='Carrito'
-        isActive={false}
+        isActive={active === FooterTabs.CART}
+        onClick={() => handleChangeTab(FooterTabs.CART)}
       />
       <FooterButtonComponent
         icon={shippingIcon}
         alt='Pedido'
         text='Pedido'
-        isActive={false}
+        isActive={active === FooterTabs.ORDER}
+        onClick={() => handleChangeTab(FooterTabs.ORDER)}
       />
       <FooterButtonComponent
         icon={userIcon}
         alt='Ingresar'
         text='Ingresar'
-        isActive={false}
+        isActive={active === FooterTabs.LOGIN}
+        onClick={() => handleChangeTab(FooterTabs.LOGIN)}
       />
     </div>
   );

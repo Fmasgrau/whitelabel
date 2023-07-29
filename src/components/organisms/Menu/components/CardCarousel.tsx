@@ -4,8 +4,8 @@ import styles from './CardCarousel.module.scss';
 
 export default function CardCarousel({ src, alt, title, isActive }: any) {
   return (
-    <div
-      className={`flex justify-content-center p-3 border-round-lg align-items-center w-8rem h-3rem surface-300 ${
+    <button
+      className={`flex justify-content-center p-3 border-round-lg align-items-center w-8rem h-3rem surface-300 border-none ${
         isActive ? 'bg-primary' : 'surface-300'
       }`}
     >
@@ -24,6 +24,6 @@ export default function CardCarousel({ src, alt, title, isActive }: any) {
           className={`${isActive ? styles.isActive : styles.notActive}`}
         />
       </div>
-    </div>
+    </button>
   );
 }
