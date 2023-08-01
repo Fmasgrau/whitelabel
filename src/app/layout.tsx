@@ -11,6 +11,9 @@ import '../../styles/global.scss';
 import 'primereact/resources/primereact.min.css';
 import '/node_modules/primeflex/primeflex.css'
 
+//icons
+import 'primeicons/primeicons.css';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({

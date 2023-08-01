@@ -3,6 +3,9 @@ import { Button } from 'primereact/button';
 import { ProgressBar } from 'primereact/progressbar';
 import React from 'react';
 import ButtonSplitter from './components/ButtonSplitter/ButtonSplitter';
+import Image from 'next/image';
+import { productImg } from '../../../../assets';
+import ProductCartCard from './components/ProductCartCard/ProductCartCard';
 
 export default function CartPageComponent() {
   return (
@@ -46,8 +49,11 @@ export default function CartPageComponent() {
       </div>
       <div className='flex flex-column align-items-center mt-4 w-full'>
         <div className='text-700'>Productos: 1</div>
-        <div>
-          <div className='bg-white w-full border-round-sm mt-2 shadow-4'>Card</div>
+        <div className='w-full'>
+          <ProductCartCard />
+          <ProductCartCard />
+          <ProductCartCard isMaxQuantity/>
+          <ProductCartCard />
         </div>
       </div>
     </div>
