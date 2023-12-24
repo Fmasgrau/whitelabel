@@ -11,6 +11,7 @@ import cookiesSvg from './icons/cookies.svg'
 import fireSvg from './icons/fire.svg'
 import storeSvg from './icons/store.svg'
 import cigarettesSvg from './icons/cigarettes.svg'
+import logoArgentina from './icons/logo/logo.png'
 
 export const tresHermanosLogo = logo3hermanos
 export const productImg = selvaImg
@@ -25,3 +26,4 @@ export const cookiesIcon = cookiesSvg
 export const fireIcon = fireSvg
 export const storeIcon = storeSvg
 export const cigarettesIcon = cigarettesSvg
+export const logoArgentinaIcon = logoArgentina
